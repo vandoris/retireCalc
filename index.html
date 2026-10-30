@@ -114,6 +114,24 @@ table.cmp{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;
 .cmp td .how{font-size:14px;color:var(--muted);line-height:1.45;font-weight:400}
 .cmp tr.best td{background:var(--ok-soft)}
 .cmp tr.na td{opacity:.45}
+@media (max-width:720px){
+  table.cmp{min-width:0}
+  .cmp thead{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp td{display:block;width:100%}
+  .cmp tr{border:1px solid var(--line);border-radius:12px;padding:6px 14px 10px;margin-bottom:12px}
+  .cmp tr.best{border:2px solid var(--ok)}
+  .cmp tr.best td{background:none}
+  .cmp tr.best{background:var(--ok-soft)}
+  .cmp td{border-bottom:1px dashed var(--line);padding:10px 0;text-align:left}
+  .cmp td:last-child{border-bottom:none}
+  .cmp td.n{white-space:normal;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start;font-size:19px}
+  .cmp td.n::before{content:attr(data-label);font-size:15px;color:var(--muted);font-weight:700;padding-top:2px}
+  .cmp td.n>.brk{grid-column:1 / -1;text-align:right}
+  .cmp td.n>.brk div{white-space:normal}
+  .cmp td[colspan]{display:block}
+  .cmp td[colspan]::before{content:none}
+  .bar{max-width:none}
+}
 .bar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--line);margin-top:8px;max-width:260px}
 .bar span{display:block;height:100%}
 .bar .s-li{background:var(--li)} .bar .s-old{background:var(--old)} .bar .s-new{background:var(--new)}
@@ -305,6 +323,18 @@ footer a{color:var(--accent)}
 </div>
 
 <script>
+// 版本自動更新：放在 GitHub Pages 時，開啟後檢查伺服器上的版本，不同就自動重新載入最新版
+const APP_VERSION='2026-10-30.1';
+(function(){
+  if(!/\.github\.io$/.test(location.hostname))return;
+  const url=location.pathname+'?check='+Date.now();
+  fetch(url,{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{
+    const m=t.match(/const APP_VERSION='([^']+)'/);
+    if(!m||m[1]===APP_VERSION)return;
+    let tried=false; try{tried=sessionStorage.getItem('reloadedFor')===m[1]; sessionStorage.setItem('reloadedFor',m[1]);}catch(e){}
+    if(!tried)location.replace(location.pathname+'?v='+encodeURIComponent(m[1]));
+  }).catch(()=>{});
+})();
 (function(){
 const $=id=>document.getElementById(id);
 const num=id=>+$(id).value||0;
@@ -596,7 +626,7 @@ function calc(){
     const beTxt=bt.length?bt.join('<br>'):'全部一次領，沒有月領';
     const w=v=>best>0?v/best*100:0;
     return `<tr class="${k===bestI?'best':''}"><td><div class="plan">${x.p.name}${k===bestI?'<span class="tag">★ 累計最多</span>':''}</div><div class="how">${x.p.how}</div><div class="bar" role="img" aria-label="組成：勞保 ${fmt(x.cLi)}、舊制 ${fmt(oldPay)}、新制 ${fmt(x.cNw)}"><span class="s-li" style="width:${w(x.cLi)}%"></span><span class="s-old" style="width:${w(oldPay)}%"></span><span class="s-new" style="width:${w(x.cNw)}%"></span></div></td>
-      <td class="n">${fmt(x.lump)}${brk(x.lumpL)}</td><td class="n">${x.mon?fmt(x.mon):'—'}${x.mon?brk(x.monL):''}</td><td class="n">${beTxt}</td><td class="n">${fmt(x.cum)}${brk(x.cumL)}</td></tr>`;
+      <td class="n" data-label="退休時一次拿到">${fmt(x.lump)}${brk(x.lumpL)}</td><td class="n" data-label="之後每月">${x.mon?fmt(x.mon):'—'}${x.mon?brk(x.monL):''}</td><td class="n" data-label="月領幾歲回本">${beTxt}</td><td class="n" data-label="累計到 ${Math.round(life)} 歲">${fmt(x.cum)}${brk(x.cumL)}</td></tr>`;
   }).join('');
 
   // 舊制提示
