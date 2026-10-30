@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>退休金試算</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: 頁首插圖帶 → 四張輸入卡（每筆錢一個代表色）→ 方案比較表＋組成長條。全頁單一字體：正黑體 */
+:root{
+  --bg:#f1f6f7; --paper:#ffffff; --ink:#1b2a30; --muted:#566a70; --line:#d5e0e2;
+  --accent:#1d6f6a; --accent-soft:#dff0ee;
+  --hero:#dcefee; --sun:#f6c445; --hill:#a9d8c6; --hill2:#7fc3a8;
+  --li:#2f6db3; --li-soft:#e3eefa;      /* 勞保：藍 */
+  --old:#c4760c; --old-soft:#fcefd9;    /* 舊制：橘 */
+  --new:#2c8a57; --new-soft:#e1f3e8;    /* 新制：綠 */
+  --warn:#9a4a10; --warn-soft:#fbeedd; --ok:#2d6a36; --ok-soft:#e3f1e4;
+  --font:"Microsoft JhengHei","微軟正黑體","Noto Sans TC","PingFang TC",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111a1d; --paper:#19252a; --ink:#e7eef0; --muted:#9fb3b7; --line:#2d3e43;
+  --accent:#7ccbc3; --accent-soft:#1d3634;
+  --hero:#173033; --sun:#e8b93c; --hill:#2c5a4b; --hill2:#3b7560;
+  --li:#7fb2ec; --li-soft:#1b2c40; --old:#f0b25a; --old-soft:#3a2c17; --new:#7fd3a2; --new-soft:#183526;
+  --warn:#f0b27a; --warn-soft:#3a2a1a; --ok:#8fd19a; --ok-soft:#1d3322; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111a1d; --paper:#19252a; --ink:#e7eef0; --muted:#9fb3b7; --line:#2d3e43;
+  --accent:#7ccbc3; --accent-soft:#1d3634;
+  --hero:#173033; --sun:#e8b93c; --hill:#2c5a4b; --hill2:#3b7560;
+  --li:#7fb2ec; --li-soft:#1b2c40; --old:#f0b25a; --old-soft:#3a2c17; --new:#7fd3a2; --new-soft:#183526;
+  --warn:#f0b27a; --warn-soft:#3a2a1a; --ok:#8fd19a; --ok-soft:#1d3322; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+button,input,select,table{font-family:var(--font)}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.hero{background:var(--hero);border-radius:18px;padding:26px 28px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;overflow:hidden}
+.hero h1{font-weight:900;font-size:clamp(30px,5.4vw,44px);margin:0;text-wrap:balance;letter-spacing:.04em;line-height:1.25}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin:8px 0 0;color:var(--muted);max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;padding:4px 12px;border-radius:999px}
+.chip i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.c-li{background:var(--li-soft);color:var(--li)} .c-li i{background:var(--li)}
+.c-old{background:var(--old-soft);color:var(--old)} .c-old i{background:var(--old)}
+.c-new{background:var(--new-soft);color:var(--new)} .c-new i{background:var(--new)}
+.hero svg{width:210px;height:auto;max-width:100%}
+@media (max-width:640px){.hero{grid-template-columns:minmax(0,1fr);padding:22px 18px}.hero svg{width:160px;justify-self:end;margin-top:-8px}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{--c:var(--accent);--cs:var(--accent-soft);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.panel.li{--c:var(--li);--cs:var(--li-soft)} .panel.old{--c:var(--old);--cs:var(--old-soft)} .panel.new{--c:var(--new);--cs:var(--new-soft)}
+.ph{display:flex;gap:14px;align-items:center}
+.badge{width:52px;height:52px;border-radius:50%;background:var(--cs);color:var(--c);display:grid;place-items:center;flex:none}
+.badge svg{width:28px;height:28px}
+.ph div{display:flex;flex-direction:column;min-width:0}
+.step{font-size:14px;letter-spacing:.12em;color:var(--c);font-weight:700}
+.panel h2{font-size:23px;font-weight:900;margin:0;line-height:1.3}
+.panel h2 small{font-size:15px;color:var(--muted);font-weight:400;margin-left:6px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-weight:700}
+.hint{font-size:15px;color:var(--muted)}
+input[type=date],input[type=number],select{font-size:19px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%;min-height:52px}
+input:focus,select:focus{border-color:var(--c,var(--accent))}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--c,var(--accent));outline-offset:2px}
+.roc{font-size:15px;color:var(--c,var(--accent));font-weight:700}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:520px){.row2{grid-template-columns:minmax(0,1fr)}}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:520px){.cases{grid-template-columns:minmax(0,1fr)}}
+.case{text-align:left;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:12px;cursor:pointer;display:flex;flex-direction:column;gap:2px;font-size:18px}
+.case b{font-size:20px}
+.case span{font-size:14px;color:var(--muted);line-height:1.45}
+.case[aria-pressed="true"]{border-color:var(--c);background:var(--cs)}
+.case[aria-pressed="true"] b::before{content:"✓ ";color:var(--c)}
+[hidden]{display:none!important}
+.panel.off .field:not(.keep),.panel.off .cases,.panel.off .toggle{opacity:.45}
+.panel.off .out{background:var(--bg)}
+.oldwhy{margin:0;padding:10px 14px;border-radius:10px;background:var(--line);color:var(--ink);font-weight:700;font-size:16px}
+.natag{display:inline-block;font-size:14px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--line);color:var(--muted);margin-left:8px;vertical-align:middle}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.d-li{background:var(--li)} .d-old{background:var(--old)} .d-new{background:var(--new)}
+.brk{font-size:14px;color:var(--muted);font-weight:400;line-height:1.55;margin-top:4px}
+.brk div{white-space:nowrap}
+.linkbtn{font:inherit;font-size:15px;background:none;border:none;padding:0;color:var(--c);text-decoration:underline;cursor:pointer;font-weight:700}
+.flabel{font-weight:700}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:16px;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;line-height:1.4}
+.pill b{color:var(--c)}
+.pill[aria-pressed="true"]{border-color:var(--c);background:var(--cs);font-weight:700}
+.custom{display:flex;align-items:center;gap:8px;max-width:220px}
+.custom span{font-weight:700}
+.case:disabled{opacity:.4;cursor:not-allowed}
+.toggle{display:flex;gap:12px;align-items:flex-start;font-weight:700;cursor:pointer}
+.toggle input{width:26px;height:26px;margin-top:3px;accent-color:var(--c);flex:none}
+.out{background:var(--cs);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.kv{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.kv b{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--c);font-size:20px}
+.note{border-radius:10px;padding:10px 14px;font-size:16px}
+.note.warn{background:var(--warn-soft);color:var(--warn)}
+.note.ok{background:var(--ok-soft);color:var(--ok)}
+.notes{display:flex;flex-direction:column;gap:8px}
+.compare{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.compare .ph h2{font-size:26px;font-weight:900;margin:0}
+.tablewrap{overflow-x:auto}
+table.cmp{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:700px}
+.cmp th,.cmp td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp thead th{font-size:15px;color:var(--muted);font-weight:700;border-bottom:2px solid var(--ink)}
+.cmp td.n{white-space:nowrap;font-weight:700}
+.cmp td .plan{font-weight:900;font-size:19px}
+.cmp td .how{font-size:14px;color:var(--muted);line-height:1.45;font-weight:400}
+.cmp tr.best td{background:var(--ok-soft)}
+.cmp tr.na td{opacity:.45}
+.bar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--line);margin-top:8px;max-width:260px}
+.bar span{display:block;height:100%}
+.bar .s-li{background:var(--li)} .bar .s-old{background:var(--old)} .bar .s-new{background:var(--new)}
+.tag{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--ok);color:var(--paper);margin-left:8px;vertical-align:middle}
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 22px}
+summary{font-size:22px;font-weight:900;cursor:pointer}
+.rules{max-width:74ch}
+.rules h3{font-size:18px;margin:22px 0 6px}
+.rules h3.li{color:var(--li)} .rules h3.old{color:var(--old)} .rules h3.new{color:var(--new)}
+.rules li{font-size:17px}
+.rules ul{padding-left:1.2em;margin:6px 0}
+footer{font-size:15px;color:var(--muted)}
+footer a{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .case{transition:border-color .15s,background .15s}
+  .bar span{transition:width .4s ease}
+  .sunray{transform-origin:170px 52px;animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <h1>退休金<em>試算</em></h1>
+    <p>一次算出三筆退休金，比較「一次領」和「月領」哪種組合比較划算。規則依勞保條例、勞基法、勞工退休金條例及勞動部公告。下方已先填入<strong>範例資料</strong>，請改成自己的資料。</p>
+    <div class="chips"><span class="chip c-li"><i></i>勞保老年給付</span><span class="chip c-old"><i></i>勞退舊制</span><span class="chip c-new"><i></i>勞退新制</span></div>
+  </div>
+  <svg viewBox="0 0 220 150" aria-hidden="true">
+    <g class="sunray" stroke="var(--sun)" stroke-width="4" stroke-linecap="round">
+      <path d="M170 18v-10M170 96v10M136 52h-10M214 52h-10M146 28l-7-7M201 83l7 7M146 76l-7 7M201 21l7-7"/>
+    </g>
+    <circle cx="170" cy="52" r="24" fill="var(--sun)"/>
+    <path d="M0 120c40-30 80-34 120-18s70 10 100-6v54H0z" fill="var(--hill)"/>
+    <path d="M0 138c50-20 110-22 160-8 25 7 45 6 60 0v20H0z" fill="var(--hill2)"/>
+    <g>
+      <ellipse cx="62" cy="118" rx="26" ry="8" fill="var(--old)"/>
+      <rect x="36" y="104" width="52" height="14" fill="var(--old)"/>
+      <ellipse cx="62" cy="104" rx="26" ry="8" fill="var(--old-soft)" stroke="var(--old)" stroke-width="3"/>
+      <ellipse cx="62" cy="96" rx="26" ry="8" fill="var(--li)"/>
+      <rect x="36" y="82" width="52" height="14" fill="var(--li)"/>
+      <ellipse cx="62" cy="82" rx="26" ry="8" fill="var(--li-soft)" stroke="var(--li)" stroke-width="3"/>
+      <ellipse cx="62" cy="74" rx="26" ry="8" fill="var(--new)"/>
+      <rect x="36" y="60" width="52" height="14" fill="var(--new)"/>
+      <ellipse cx="62" cy="60" rx="26" ry="8" fill="var(--new-soft)" stroke="var(--new)" stroke-width="3"/>
+      <path d="M62 56V36" stroke="var(--new)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M62 42c0-10 8-15 18-15 0 10-8 15-18 15z" fill="var(--new)"/>
+      <path d="M62 46c0-8-6-12-14-12 0 8 6 12 14 12z" fill="var(--hill2)"/>
+    </g>
+  </svg>
+</header>
+
+<div class="grid">
+<section class="panel" aria-label="基本資料">
+  <div class="ph"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><span class="step">第一步</span><h2>基本資料</h2></div></div>
+  <div class="field"><label for="birth">出生日期</label><input id="birth" type="date" value="1966-10-01"><span class="roc" data-for="birth"></span></div>
+  <div class="field"><label for="retire">預計退休／請領日</label><input id="retire" type="date" value="2026-11-01"><span class="roc" data-for="retire"></span><span class="hint" id="ageInfo"></span></div>
+  <div class="field"><label for="life">比較到幾歲（看累計可領多少）</label><input id="life" type="number" min="61" max="110" value="85"><span class="hint">只是用來比較的假設年齡，不是預測。</span></div>
+</section>
+
+<section class="panel li" aria-label="勞保">
+  <div class="ph"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><span class="step">第二步</span><h2>勞保老年給付<small>勞保局發給</small></h2></div></div>
+  <div class="row2">
+    <div class="field"><label for="liY">目前勞保年資（年）</label><input id="liY" type="number" min="0" max="60" value="36"></div>
+    <div class="field"><label for="liM">又幾個月</label><input id="liM" type="number" min="0" max="11" value="8"></div>
+  </div>
+  <span class="hint">填勞保局查詢結果的「<b>年金給付年資</b>」，不是「投保年資」。</span>
+  <div class="field"><label for="liFirst">首次加保日期（選填）</label><input id="liFirst" type="date" value=""><span class="roc" data-for="liFirst"></span><span class="hint">勞保局查詢結果的「<b>首筆資料</b>」日期。在民國 94 年 7 月 1 日以後的話，代表完全適用勞退新制，舊制區塊會自動關閉。</span></div>
+  <label class="toggle"><input id="liAdd" type="checkbox" checked><span>會繼續加保到退休日（自動加上今天到退休日的年資）</span></label>
+  <div class="field"><label for="li60s">最高 60 個月的平均月投保薪資</label><select id="li60s" class="grade" data-table="li" data-for="li60"></select><input id="li60" type="number" min="0" max="45800" step="1" value="45800" hidden aria-label="自己輸入平均月投保薪資"><span class="hint">月領年金用，看「勞保級距」，最高 45,800 元。若有幾年投保較低，平均會比現在的級距低，可到勞保局 e 化服務查平均值，選「其他金額」輸入。</span></div>
+  <div class="field"><label for="li36s">退保前 3 年（36 個月）的平均月投保薪資</label><select id="li36s" class="grade" data-table="li" data-for="li36"></select><input id="li36" type="number" min="0" max="45800" step="1" value="45800" hidden aria-label="自己輸入平均月投保薪資"><span class="hint">一次請領用，同樣看「勞保級距」。</span></div>
+  <label class="toggle"><input id="pre98" type="checkbox" checked><span>民國 98 年 1 月 1 日以前就有勞保年資</span></label>
+  <div class="out" id="liOut"></div>
+</section>
+
+<section class="panel old" aria-label="勞退舊制">
+  <div class="ph"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></span><div><span class="step">第三步</span><h2>勞退舊制<small>公司一次發給</small><span class="natag" id="oldTag" hidden>不適用</span></h2></div></div>
+  <p class="oldwhy" id="oldWhy" hidden></p>
+  <div class="field keep" id="hireField"><label for="hire">在這家公司的到職日</label><input id="hire" type="date" value="1990-03-01"><span class="roc" data-for="hire"></span></div>
+  <div class="field"><label for="ind">公司行業（決定開始適用勞基法的日期）</label>
+    <select id="ind">
+      <option value="" hidden>—</option>
+      <option value="1984-08-01" selected>製造、營造、運輸倉儲及通信、水電煤氣、礦業、農林漁牧、大眾傳播（73年8月1日）</option>
+      <option value="1992-07-21">汽車修理保養、電器修理等（81年7月21日）</option>
+      <option value="1997-05-01">銀行業（含信託投資）、加油站、環境衛生（86年5月1日）</option>
+      <option value="1998-03-01">金融輔助、資訊服務、觀光旅館、證券期貨、國際貿易、零售（87年3月1日）</option>
+      <option value="1998-04-01">保險、不動產、廣告、設計、顧問、個人服務（87年4月1日）</option>
+      <option value="1998-07-01">醫療保健、社會福利、公務機構技工駕駛工友（87年7月1日）</option>
+      <option value="1998-12-31">其他行業（87年12月31日全面適用）</option>
+      <option value="custom">自己輸入日期</option>
+    </select>
+  </div>
+  <div class="field" id="lsaBox" hidden><label for="lsa">公司開始適用勞基法的日期</label><input id="lsa" type="date" value="1984-08-01"><span class="roc" data-for="lsa"></span></div>
+  <div class="field"><label for="wage">退休前 6 個月的平均月薪（元）</label><input id="wage" type="number" min="0" step="100" value="52000"><span class="hint">本薪加經常性給與，看薪資單。</span></div>
+  <div class="cases" role="group" aria-label="勞基法前年資的情形">
+    <button class="case" id="cA" type="button" aria-pressed="false"><b>甲案</b><span>勞基法前年資，公司標準<u>不低於</u>當時法令</span></button>
+    <button class="case" id="cB" type="button" aria-pressed="false"><b>乙案</b><span>勞基法前年資，公司標準<u>低於</u>當時法令</span></button>
+    <button class="case" id="cN" type="button" aria-pressed="true"><b>非甲非乙</b><span>到職時公司已適用勞基法</span></button>
+  </div>
+  <div class="field" id="preBox" hidden><label for="pre">勞基法前那段年資的退休金（元）</label><input id="pre" type="number" min="0" step="100" value="0"><span class="hint">依公司當時辦法另算，請問人事；不知道填 0。</span></div>
+  <label class="toggle" id="nsToggle"><input id="ns" type="checkbox" checked><span>民國 94 年 7 月以後有改選勞退新制（舊制年資保留到改選前一天）</span></label>
+  <div class="field" id="nsDateBox"><label for="nsDate">改選新制的日期</label><input id="nsDate" type="date" value="2005-07-01"><span class="roc" data-for="nsDate"></span></div>
+  <div class="out" id="oldOut"></div>
+</section>
+
+<section class="panel new" aria-label="勞退新制">
+  <div class="ph"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 15c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></span><div><span class="step">第四步</span><h2>勞退新制<small>年滿 60 歲可領</small></h2></div></div>
+  <div class="row2">
+    <div class="field"><label for="nsBal">個人專戶目前餘額（元）</label><input id="nsBal" type="number" min="0" step="1000" value="1350000"><span class="hint">勞保局查詢結果中，雇主與個人的「累計金額」加上「收益累計金額」，四項加總。</span></div>
+    <div class="field"><label for="nsYrs">目前新制提繳年資（年）</label><input id="nsYrs" type="number" min="0" max="50" step="0.1" value="21.3"><span class="hint">例：15年10月填 15.8。會自動加上到退休日的時間；滿 15 年才能月領。</span></div>
+    <div class="field"><label for="nsWage">月提繳工資（勞退級距）</label><select id="nsWage" class="grade" data-table="lp"></select><span class="hint">看「勞退級距」，最高 150,000 元。</span></div>
+    <div class="field"><label for="nsPct">提繳率（雇主＋自提）</label><select id="nsPct"><option value="6" selected>6%（只有雇主提繳）</option><option value="7">7%（自提 1%）</option><option value="8">8%（自提 2%）</option><option value="9">9%（自提 3%）</option><option value="10">10%（自提 4%）</option><option value="11">11%（自提 5%）</option><option value="12">12%（自提 6%）</option></select><span class="hint" id="nsMonOut"></span></div>
+    <div class="field"><label for="nsLife">平均餘命（年）</label><input id="nsLife" type="number" min="1" max="40" step="0.1" value="23"><span class="hint" id="nsLifeHint">依請領年齡自動帶入勞動部公布的平均餘命（60 歲 23 年、65 歲 19 年）。</span><button type="button" class="linkbtn" id="lifeReset" hidden></button></div>
+    <div class="field"><label for="nsRate">月退計算利率（%）</label><input id="nsRate" type="number" min="0" max="10" step="0.0001" value="1.1473"><span class="hint">勞保局目前公告值。</span></div>
+  </div>
+  <div class="field"><span class="flabel" id="retLbl">預估專戶年報酬率</span>
+    <div class="pills" role="radiogroup" aria-labelledby="retLbl" data-target="nsRet">
+      <button type="button" class="pill" data-v="7.64" aria-pressed="true">成立迄今 <b>7.64%</b></button>
+      <button type="button" class="pill" data-v="8.7" aria-pressed="false">近十年 <b>8.7%</b></button>
+      <button type="button" class="pill" data-v="10.28" aria-pressed="false">近五年 <b>10.28%</b></button>
+      <button type="button" class="pill" data-v="14.91" aria-pressed="false">近三年 <b>14.91%</b></button>
+      <button type="button" class="pill" data-v="15.6" aria-pressed="false">近一年 <b>15.6%</b></button>
+      <button type="button" class="pill" data-v="custom" aria-pressed="false">自行輸入</button>
+    </div>
+    <div class="custom" id="nsRetBox" hidden><input id="nsRet" type="number" min="0" max="20" step="0.01" value="7.64" aria-label="自行輸入年報酬率（%）"><span>%</span></div>
+    <span class="hint">勞退新制基金的實際平均報酬率（勞動基金運用局，統計至 114 年）。近幾年股市表現特別好，長期試算建議用「成立迄今」或自行輸入較保守的數字；政府保證收益不低於二年期定存利率（約 1.7%）。</span>
+  </div>
+  <div class="field"><span class="flabel" id="growLbl">預估薪資年成長率</span>
+    <div class="pills" role="radiogroup" aria-labelledby="growLbl" data-target="nsGrow">
+      <button type="button" class="pill" data-v="1.52" aria-pressed="false">經常性薪資 <b>1.52%</b></button>
+      <button type="button" class="pill" data-v="1.94" aria-pressed="false">總薪資 <b>1.94%</b></button>
+      <button type="button" class="pill" data-v="3.16" aria-pressed="false">最低工資 <b>3.16%</b></button>
+      <button type="button" class="pill" data-v="2.64" aria-pressed="false">最低生活費 <b>2.64%</b></button>
+      <button type="button" class="pill" data-v="0" aria-pressed="true">不調薪 <b>0%</b></button>
+      <button type="button" class="pill" data-v="custom" aria-pressed="false">自行輸入</button>
+    </div>
+    <div class="custom" id="nsGrowBox" hidden><input id="nsGrow" type="number" min="0" max="10" step="0.01" value="0" aria-label="自行輸入薪資年成長率（%）"><span>%</span></div>
+    <span class="hint">各項為主計總處、勞動部統計的年化成長率。快退休的人選「不調薪」即可。</span>
+  </div>
+  <span class="hint">以上數值與勞動部〈勞工個人退休金試算表（勞退新制）〉相同（115 年 3 月 5 日更新）。</span>
+  <div class="out" id="newOut"></div>
+</section>
+</div>
+
+<section class="compare" aria-label="方案比較" aria-live="polite">
+  <div class="ph"><span class="badge" style="background:var(--accent-soft);color:var(--accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><span class="step" style="color:var(--accent)">結果</span><h2>各種領法比較</h2></div></div>
+  <div class="chips"><span class="chip c-li"><i></i>勞保</span><span class="chip c-old"><i></i>舊制</span><span class="chip c-new"><i></i>新制</span><span class="hint">長條＝累計金額由哪幾筆錢組成</span></div>
+  <div class="tablewrap"><table class="cmp">
+    <thead><tr><th>領法</th><th>退休時一次拿到</th><th>之後每月</th><th>幾歲時月領總額追上一次領</th><th id="cumHead">累計到 85 歲</th></tr></thead>
+    <tbody id="cmp"></tbody>
+  </table></div>
+  <div class="notes" id="notes"></div>
+</section>
+
+<details>
+  <summary>計算規則（依政府公告）</summary>
+  <div class="rules">
+    <h3 class="li">勞保老年給付（勞工保險條例第58條、第58條之1）</h3>
+    <ul>
+      <li><b>老年年金（月領）</b>：年資滿 15 年。兩式擇高：①平均月投保薪資 × 年資 × 0.775% ＋ 3,000 元；②平均月投保薪資 × 年資 × 1.55%。平均月投保薪資取加保期間最高 60 個月，上限 45,800 元。年資未滿 1 年依月數按比例算。</li>
+      <li><b>法定請領年齡</b>：民國 46 年以前出生 60 歲，47 年 61 歲，48 年 62 歲，49 年 63 歲，50 年 64 歲，51 年以後 65 歲。</li>
+      <li><b>提前或延後</b>：最多提前 5 年，每提前 1 年減 4%；最多延後 5 年，每延後 1 年加 4%。</li>
+      <li><b>一次請領老年給付</b>：限民國 98 年 1 月 1 日前有勞保年資者，符合舊法條件（如年滿 60 歲且加保滿 1 年並退職、年資滿 25 年等）。以退保前 3 年平均月投保薪資為準：前 15 年每年 1 個月，第 16 年起每年 2 個月，最多 45 個月；60 歲以後的年資最多算 5 年，合計最多 50 個月。年資未滿半年以半年計，滿半年以 1 年計。選定後不能改。</li>
+      <li><b>老年一次金</b>：年資未滿 15 年且 98 年前沒有年資者，到法定年齡時以最高 60 個月平均月投保薪資 × 年資計算。</li>
+    </ul>
+    <h3 class="old">勞退舊制（勞動基準法第53、55條、第84條之2）</h3>
+    <ul>
+      <li>請領條件（同一家公司）：工作滿 15 年且年滿 55 歲、工作滿 25 年、工作滿 10 年且年滿 60 歲，或年滿 65 歲（強制退休）。用在這家公司的全部年資判斷，包含新制年資。不符合條件時，公司沒有給付義務，本頁只列出預估金額，比較表不計入。</li>
+      <li>基數 × 退休前 6 個月平均工資。前 15 年每年 2 基數，之後每年 1 基數，最多 45 基數。未滿半年算半年，滿半年算 1 年。</li>
+      <li>只能由公司一次發給，沒有月領。沒有改選新制時，年資算到退休日當天；有改選新制時，算到改選日的前一天。用<b>退休時</b>的平均工資計算，金額無條件進位到元。</li>
+      <li>甲案、乙案依勞動部試算表 A案、B案與 87年勞動3字第43879號函：甲案的「前 15 年」從到職日起算，適用勞基法日到下一個到職週年日之間的畸零年資按比例計算；乙案從適用勞基法日重新起算。勞基法前的年資另依當時辦法計算，前後合計最多 45 基數。</li>
+    </ul>
+    <h3 class="new">勞退新制（勞工退休金條例第23、24條）</h3>
+    <ul>
+      <li>年滿 60 歲可請領。提繳年資滿 15 年可選月領或一次領，未滿 15 年只能一次領。</li>
+      <li>專戶推估與勞動部〈勞工個人退休金試算表〉相同：以整數年齡計算提繳年數；每年調薪後提繳工資對應勞退級距（最高 150,000 元）；收益每年計算一次，當年提繳的錢以平均 5.5 個月計息。</li>
+      <li>月退休金依專戶餘額、平均餘命、利率計算，<b>每季發給</b>，至少每 3 年重算一次，領到開始請領時確定的平均餘命為止（不是終身）。本頁用年金公式估算，和勞保局實際金額會有小差距。</li>
+    </ul>
+    <h3>本頁沒有算的項目</h3>
+    <ul><li>勞保年金依物價指數的調整、遺屬年金、所得稅、已結清的舊制年資、因公傷病加給、公司優於法令的辦法、勞退新制最後一季的保證收益補足。</li></ul>
+  </div>
+</details>
+
+<footer>
+  本頁僅供試算參考，正確金額以勞保局及公司人事核算為準。官方試算：勞動部舊制 <a href="https://calcr2.mol.gov.tw/labor_retire" target="_blank" rel="noopener">calcr2.mol.gov.tw</a>、勞保局勞退新制與勞保年金 <a href="https://www.bli.gov.tw/0012942.html" target="_blank" rel="noopener">bli.gov.tw</a>；勞工諮詢專線 <span class="roc">1955</span>、勞保局 <span class="roc">02-2396-1266</span>。
+</footer>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const num=id=>+$(id).value||0;
+const fmt=n=>Math.round(n).toLocaleString('zh-TW')+' 元';
+const pd=s=>{if(!s)return null;const [y,m,d]=s.split('-').map(Number);return {y,m,d,t:Date.UTC(y,m-1,d)}};
+const dim=(y,m)=>new Date(Date.UTC(y,m,0)).getUTCDate();
+function ymd(a,b){let y=b.y-a.y,m=b.m-a.m,d=b.d-a.d;if(d<0){m--;let pm=b.m-1,py=b.y;if(pm<1){pm=12;py--;}d+=dim(py,pm);}if(m<0){y--;m+=12;}return {y,m,d,yrs:y+(m+d/30)/12};}
+const span=(a,b)=>(!a||!b||b.t<=a.t)?{y:0,m:0,d:0,yrs:0}:ymd(a,b);
+const txt=s=>`${s.y}年${s.m}個月${s.d}天`;
+const rhalf=x=>{const i=Math.floor(x+1e-9),f=x-i;if(f<1e-6)return i;return f<0.5?i+0.5:i+1;};
+const r2=x=>Math.round(x*100)/100;
+const roc=s=>{const p=pd(s);return p?`民國 ${p.y-1911} 年 ${p.m} 月 ${p.d} 日`:''};
+const CAP=45800;
+
+// ===== 移植自勞動部〈勞工個人退休金試算表（勞退舊制）〉labor_retire.js =====
+const key=(y,m,d)=>y*10000+m*100+d;
+const leapMOL=y=>y%4===0&&y%100!==0;
+const dimN=(y,m)=>new Date(Date.UTC(y,m,0)).getUTCDate();
+// 年資：從 d1 算到 d2 前一天，回傳足年、足月、足日（同 Func_Seniority）
+function seniority(a,b){
+  let y1=a.y,m1=a.m,d1=a.d; const y2=b.y,m2=b.m,d2=b.d, K2=key(y2,m2,d2);
+  let YY=0,MM=0,DD=0;
+  for(;;){y1++; if(key(y1,m1,d1)>K2){y1--;break;} YY++;}
+  for(;;){m1++; if(m1===13){m1=1;y1++;} if(key(y1,m1,d1)>K2){m1--; if(m1===0){m1=12;y1--;} break;} MM++;}
+  const prev=new Date(Date.UTC(y2,m2-1,d2-1)); const dt=dimN(prev.getUTCFullYear(),prev.getUTCMonth()+1);
+  if(d2===1&&d1>dt){DD=0;}
+  else for(;;){
+    d1++;
+    if(d1>28){
+      const short=[2,4,6,9,11].includes(m1);
+      if(d1===32){d1=short?2:1;m1++;if(m1===13){m1=1;y1++;}}
+      else if(d1===31){if(short){d1=m1===2?2:1;m1++;}}
+      else if(d1===30){if(m1===2&&leapMOL(y1)){d1=1;m1=3;} if(m1===2&&!leapMOL(y1)){d1=2;m1=3;}}
+      else if(d1===29){if(m1===2&&!leapMOL(y1)){d1=1;m1=3;}}
+    }
+    if(key(y1,m1,d1)>K2)break; DD++;
+  }
+  return {y:YY,m:MM,d:DD};
+}
+const dn=o=>Date.UTC(o.y,o.m-1,o.d)/864e5;            // 日序
+const mk=(y,m,d)=>{const t=new Date(Date.UTC(y,m-1,d));return {y:t.getUTCFullYear(),m:t.getUTCMonth()+1,d:t.getUTCDate()};};
+const plusDay=(o,n)=>{const t=new Date(Date.UTC(o.y,o.m-1,o.d+n));return {y:t.getUTCFullYear(),m:t.getUTCMonth()+1,d:t.getUTCDate()};};
+const r5=x=>Math.round(x*1e5+1e-6)/1e5;
+// 甲案基數（同 A_Func_Base：到職日、勞基法適用日、計算結束日）
+function baseA(a,s,e){
+  // 政府程式所有日期都在當天 08:00，直接比較日期即可
+  let odd;
+  if(a.m>s.m)odd=mk(s.y,a.m,a.d);
+  else if(a.m===s.m&&a.d>=s.d)odd=mk(s.y,a.m,a.d);
+  else odd=mk(s.y+1,a.m,a.d);
+  const base=mk(a.y+15,a.m,a.d);
+  const T=o=>dn(o), H=T;
+  const base2=T(s)>=H(base)?0:base.y-odd.y;
+  let v0,v;
+  if(T(e)>H(odd)){
+    const f=H(base)>=H(odd)?2:1; const q=seniority(s,odd); v0=(q.m+q.d/30)*f/12;
+    const w=seniority(odd,e); let yr=w.y; if(w.m>5)yr+=1; else if(w.m>0||w.d>0)yr+=0.5;
+    v=yr>base2?(yr-base2)+base2*2:yr*2; v+=v0;
+  } else {
+    const f=H(base)>=T(e)?2:1; const q=seniority(s,e); v=(q.m+q.d/30)*f/12;
+  }
+  return r5(v);
+}
+// 乙案基數（同 B_Func_Base）
+function baseB(q){let yr=q.y; if(q.m>5)yr+=1; else if(q.m>0||q.d>0)yr+=0.5; let v=yr>15?(yr-15)+30:yr*2; return Math.min(45,v);}
+const ceilAmt=(wage,base)=>{const b=Math.round(base*1e5); const p=Math.round(wage)*b; return Math.floor((p+99999)/1e5);};
+
+// ===== 移植自勞動部〈勞工個人退休金試算表（勞退新制）〉trial.js：calculateAnnity =====
+function annuityMOL({salary,withdraw,grow,ret,startAge,retireAge,oldAmt}){
+  const gm=v=>LP.find(x=>x>=v)??LP[LP.length-1];
+  let salaryMonth=salary;
+  let revenue=(salaryMonth*withdraw*5.5+oldAmt)*ret;
+  let yW=Math.round(salaryMonth*withdraw)*12;
+  let wT=yW+oldAmt, ann=wT+revenue, last=null;
+  const years=retireAge-startAge;
+  for(let i=0;i<years;i++){
+    last={year:i+1,annuity:Math.round(ann),withdrawTotal:Math.round(wT),revenue:Math.round(revenue)};
+    salary+=Math.round(salary*grow); salaryMonth=gm(salary);
+    yW=Math.round(salaryMonth*withdraw)*12; wT+=yW;
+    revenue+=(salaryMonth*withdraw*5.5+ann)*ret; ann=wT+revenue;
+  }
+  return last||{year:0,annuity:Math.round(oldAmt),withdrawTotal:Math.round(oldAmt),revenue:0};
+}
+
+let mode='N';
+const btn={A:$('cA'),B:$('cB'),N:$('cN')};
+Object.entries(btn).forEach(([k,b])=>b.addEventListener('click',()=>{if(!b.disabled){mode=k;calc();}}));
+$('ind').addEventListener('change',()=>{const v=$('ind').value;$('lsaBox').hidden=v!=='custom';if(v&&v!=='custom')$('lsa').value=v;calc();});
+// 115年1月1日起適用分級表（勞動部勞動保2字第1140091863號令、勞動福3字第1140153598號令）
+const LI=[29500,30300,31800,33300,34800,36300,38200,40100,42000,43900,45800];
+const LP=[1500,3000,4500,6000,7500,8700,9900,11100,12540,13500,15840,16500,17280,17880,19047,20008,21009,22000,23100,24000,25250,26400,27600,28590,29500,30300,31800,33300,34800,36300,38200,40100,42000,43900,45800,48200,50600,53000,55400,57800,60800,63800,66800,69800,72800,76500,80200,83900,87600,92100,96600,101100,105600,110100,115500,120900,126300,131700,137100,142500,147900,150000];
+const label=(t,k)=>{const v=t[k],lo=k?t[k-1]+1:null,last=k===t.length-1;
+  const range=k===0?`月薪 ${v.toLocaleString('zh-TW')} 元以下`:last?`月薪 ${lo.toLocaleString('zh-TW')} 元以上`:`月薪 ${lo.toLocaleString('zh-TW')}～${v.toLocaleString('zh-TW')} 元`;
+  return `第${k+1}級　${v.toLocaleString('zh-TW')} 元（${range}）`;};
+document.querySelectorAll('select.grade').forEach(sel=>{
+  const t=sel.dataset.table==='li'?LI:LP;
+  sel.innerHTML=t.map((v,k)=>`<option value="${v}">${label(t,k)}</option>`).join('')+(sel.dataset.for?'<option value="other">其他金額（自己輸入平均值）</option>':'');
+  sel.value=sel.dataset.table==='li'?'45800':'53000';
+  sel.addEventListener('change',()=>{if(sel.dataset.for){const inp=$(sel.dataset.for);inp.hidden=sel.value!=='other';if(sel.value!=='other')inp.value=sel.value;}calc();});
+});
+$('nsPct').addEventListener('change',calc);
+let lifeEdited=false; $('nsLife').addEventListener('input',()=>{lifeEdited=true;});
+$('lifeReset').addEventListener('click',()=>{lifeEdited=false;calc();});
+// 勞動部勞退新制試算表的平均餘命（請領年齡 → 年）
+const LIFE={60:23,61:23,62:22,63:21,64:20,65:19,66:19,67:18,68:17,69:16,70:16,71:15,72:14,73:13,74:13,75:12,76:11,77:11,78:10,79:9,80:9,81:8,82:8,83:7,84:6,85:6};
+document.querySelectorAll('.pills').forEach(g=>{
+  const inp=$(g.dataset.target), box=$(g.dataset.target+'Box');
+  g.querySelectorAll('.pill').forEach(b=>b.addEventListener('click',()=>{
+    g.querySelectorAll('.pill').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    const v=b.dataset.v; box.hidden=v!=='custom'; if(v!=='custom')inp.value=v; else inp.focus();
+    calc();
+  }));
+});
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc));
+
+function calc(){
+  const N=[];
+  const NEWLAW=Date.UTC(2005,6,1);
+  const liFirst=pd($('liFirst').value);
+  const firstNew=!!(liFirst&&liFirst.t>=NEWLAW);  // 首次加保在 94/7/1 以後：一定是純新制
+  if(firstNew){ if($('hire').value)$('hire').value=''; $('hire').disabled=true; } else $('hire').disabled=false;
+  const hire0=pd($('hire').value);
+  document.querySelectorAll('.roc[data-for]').forEach(e=>e.textContent=roc($(e.dataset.for).value));
+  const birth=pd($('birth').value),retire=pd($('retire').value),hire=hire0||(firstNew?liFirst:null),lsa=pd($('lsa').value);
+  if(!birth||!retire||!hire||!lsa||retire.t<=birth.t){$('cmp').innerHTML='';$('notes').innerHTML='<div class="note warn">請先填好出生日期、退休日，以及舊制的到職日（沒有舊制的話，填勞保區的「首次加保日期」）。</div>';return;}
+  const ageS=span(birth,retire), age=ageS.yrs;
+  const rocY=birth.y-1911, legal=rocY<=46?60:rocY>=51?65:rocY-46+60;
+  $('ageInfo').textContent=`請領時 ${ageS.y} 歲 ${ageS.m} 個月；勞保法定請領年齡 ${legal} 歲。`;
+  const life=Math.max(age,num('life'));
+  $('cumHead').textContent=`累計到 ${Math.round(life)} 歲`;
+
+  // ===== 勞保 =====（每筆錢從「退休日」與「最早可請領年齡」較晚者開始）
+  const A1=x=>Math.floor(x*10+1e-9)/10; // 顯示用年齡
+  const now=new Date(), today={t:Date.UTC(now.getFullYear(),now.getMonth(),now.getDate()),y:now.getFullYear(),m:now.getMonth()+1,d:now.getDate()};
+  const toRet=span(today,retire).yrs;
+  const liYrs=num('liY')+Math.min(11,num('liM'))/12+($('liAdd').checked?toRet:0);
+  if($('liAdd').checked&&toRet>0.05)N.push(['ok',`勞保年資已加上到退休日的 ${toRet.toFixed(1)} 年，退休時約 ${liYrs.toFixed(1)} 年。`]);
+  const w60=Math.min(CAP,num('li60')), w36=Math.min(CAP,num('li36'));
+  if(num('li60')>CAP||num('li36')>CAP)N.push(['warn','勞保平均月投保薪資上限 45,800 元，已用上限計算。']);
+  const nsMonth=num('nsWage')*num('nsPct')/100;
+  $('nsMonOut').textContent=`每月提繳 ${Math.round(nsMonth).toLocaleString('zh-TW')} 元`;
+  let liMon=null, liMonAge=null, liMonNote='';
+  if(liYrs>=15){
+    const m1=w60*liYrs*0.00775+3000, m2=w60*liYrs*0.0155, base=Math.max(m1,m2);
+    liMonAge=Math.max(age,legal-5);
+    const diff=liMonAge-legal;
+    const adj=diff<0?-Math.min(5,Math.ceil(-diff-1e-9)):Math.min(5,Math.floor(diff+1e-9));
+    liMon=base*(1+0.04*adj);
+    liMonNote=`${liMonAge>age?`${legal-5} 歲起可領（最早提前 5 年）。`:''}${m2>=m1?'第②式':'第①式'}較高 ${fmt(base)}，${adj<0?`提前 ${-adj} 年減 ${-adj*4}%`:adj>0?`延後 ${adj} 年加 ${adj*4}%`:'在法定年齡請領'}`;
+  } else liMonNote='年資未滿 15 年，不能月領年金';
+  let liLump=null, liLumpAge=null, liLumpNote='';
+  if($('pre98').checked){
+    // 60 歲前年資最多 45 個月；60 歲後年資最多算 5 年；合計最多 50 個月
+    const months=p=>Math.min(15,p)+2*Math.max(0,p-15);
+    const R=rhalf(liYrs), post60raw=Math.max(0,Math.min(liYrs,age-60));
+    const pre60=Math.min(R,rhalf(liYrs-post60raw)), post60=Math.min(5,Math.max(0,R-pre60));
+    const a=months(pre60), b=months(pre60+post60)-a;
+    const total=Math.min(50,Math.min(45,a)+b);
+    liLump=w36*total; liLumpAge=Math.max(age,60);
+    liLumpNote=`${liLumpAge>age?'60 歲起可領。':''}${r2(total)} 個月 × ${w36.toLocaleString('zh-TW')}`;
+    if(age<60)N.push(['warn','勞保一次請領一般要年滿 60 歲（女性 55 歲）並退職；年資滿 25 年等情形可以更早，本頁以 60 歲計，請向勞保局確認。']);
+  } else if(liYrs<15){
+    liLump=w60*rhalf(liYrs); liLumpAge=Math.max(age,legal);
+    liLumpNote=`老年一次金，${liLumpAge>age?legal+' 歲起可領，':''}${rhalf(liYrs)} 個月 × ${w60.toLocaleString('zh-TW')}`;
+  } else liLumpNote='98 年後才加保且年資滿 15 年，只能月領年金';
+  const at=(age0)=>age0>age+1e-6?`<span class="hint">（${A1(age0)} 歲起）</span>`:'';
+  $('liOut').innerHTML=`<div class="kv"><span>月領年金</span><b>${liMon!=null?fmt(liMon)+' / 月':'不能選'}</b></div><span class="hint">${liMonNote}</span>
+    <div class="kv"><span>一次請領</span><b>${liLump!=null?fmt(liLump):'不能選'}</b></div><span class="hint">${liLumpNote}</span>`;
+
+  // ===== 舊制（依勞動部舊制試算表的算法）=====
+  const noOld=hire.t>=NEWLAW||firstNew;            // 94/7/1 以後到職：沒有舊制年資
+  const ageWarn=(hire0&&seniority(birth,hire).y<15&&hire.t>birth.t)?['warn',`到職日（${roc($('hire').value)}）時還未滿 15 歲，請確認舊制的「到職日」是不是還是範例資料。沒有舊制的話，填「首次加保日期」或把到職日改成實際日期即可。`]:null;
+  if(liFirst&&!firstNew&&hire.t<liFirst.t)N.push(['warn',`到職日（${roc($('hire').value)}）早於首次加保日（${roc($('liFirst').value)}），一般到職就要加勞保，請再確認到職日。`]);
+  const panelOld=document.querySelector('.panel.old');
+  panelOld.classList.toggle('off',noOld); $('oldTag').hidden=!noOld;
+  // 純新制（首次加保在 94/7/1 以後）：連到職日也清空鎖住；只有到職日判斷時，保留到職日讓使用者修正
+  $('hireField').classList.toggle('keep',!firstNew);
+  const why=$('oldWhy'); why.hidden=!noOld;
+  why.textContent=firstNew?`原因：首次加保日（${roc($('liFirst').value)}）在民國 94 年 7 月 1 日以後，完全適用勞退新制，沒有舊制年資。`
+    :`原因：到職日在民國 94 年 7 月 1 日以後，全部適用勞退新制，沒有舊制年資。到職日填錯的話，改正後會自動解鎖。`;
+  const lockIds=['ind','lsa','wage','pre','ns','nsDate'];
+  if(noOld){
+    if(!panelOld.dataset.locked){ $('ind').value=''; $('wage').value=''; $('pre').value=''; $('nsDate').value=''; $('ns').checked=false; }
+    lockIds.forEach(id=>$(id).disabled=true); Object.values(btn).forEach(b=>{b.disabled=true;b.setAttribute('aria-pressed','false');});
+    $('lsaBox').hidden=true; $('preBox').hidden=true; $('nsDateBox').hidden=true;
+    panelOld.dataset.locked='1';
+  } else if(panelOld.dataset.locked){
+    lockIds.forEach(id=>$(id).disabled=false); delete panelOld.dataset.locked;
+    if(!$('ind').value){$('ind').value='1984-08-01';$('lsa').value='1984-08-01';}
+  }
+  let oldAmt=0, oldElig=false, bases=0, T={y:0,m:0,d:0}, S={y:0,m:0,d:0}, oldNote='';
+  const wage=num('wage');
+  if(!noOld){
+    const hasPre=hire.t<lsa.t;
+    btn.A.disabled=btn.B.disabled=!hasPre; btn.N.disabled=hasPre;
+    if(hasPre&&mode==='N')mode='A'; if(!hasPre)mode='N';
+    Object.entries(btn).forEach(([k,b])=>b.setAttribute('aria-pressed',k===mode));
+    $('preBox').hidden=mode==='N';
+    const ns=$('ns').checked, nsD=pd($('nsDate').value); $('nsDateBox').hidden=!ns;
+    const fEnd=plusDay(retire,1);                                   // 退休日＋1 天（算到退休日當天）
+    const endD=(ns&&nsD&&nsD.t<dn(fEnd)*864e5)?nsD:fEnd;            // 有改選新制：算到改選日前一天
+    const startD=hasPre?lsa:hire;
+    S=seniority(hire,fEnd);                                         // 在這家公司的全部年資
+    const ageFull=seniority(birth,fEnd).y;
+    const pre=mode==='N'?0:num('pre');
+    if(dn(endD)>dn(lsa)){
+      T=seniority(hire,endD);
+      bases=mode==='B'?baseB(seniority(startD,endD)):baseA(hire,startD,endD);
+      let v=ceilAmt(wage,bases); const lim=45*Math.round(wage)-pre;
+      v=lim>0?Math.min(v,lim):0; oldAmt=v+pre;
+    }
+    oldElig=S.y>=25||(S.y>=15&&ageFull>=55)||(S.y>=10&&ageFull>=60)||ageFull>=65;
+    const why=[]; if(S.y>=25)why.push('工作滿 25 年'); if(S.y>=15&&ageFull>=55)why.push('工作滿 15 年且滿 55 歲'); if(S.y>=10&&ageFull>=60)why.push('工作滿 10 年且滿 60 歲'); if(ageFull>=65)why.push('年滿 65 歲');
+    oldNote=oldElig?`符合退休條件：${why.join('、')}（在這家公司共 ${txt(S)}）。`
+      :`尚未符合退休條件（在這家公司 ${txt(S)}，退休時 ${ageFull} 歲），公司沒有給付義務。上面是假設符合條件時，這段舊制年資可領的預估金額，比較表不計入。`;
+    if(ns&&nsD&&(nsD.t<NEWLAW||nsD.t>Date.UTC(2010,5,30)))N.push(['warn','改選新制的法定期間是 94年7月1日 至 99年6月30日，請確認日期。']);
+    if(mode!=='N'&&num('pre')===0)N.push(['warn','尚未填勞基法前那段年資的退休金，舊制金額可能偏低。']);
+    if(!wage)N.push(['warn','請填舊制的「退休前 6 個月平均月薪」。']);
+  }
+  const oldPay=oldElig?oldAmt:0;
+  $('oldOut').innerHTML=noOld?`<div class="kv"><span>舊制退休金</span><b>不適用</b></div><span class="hint">比較表不計入舊制。</span>`
+    :`<div class="kv"><span>舊制年資</span><b>${txt(T)}</b></div><div class="kv"><span>基數</span><b>${bases>45?`45 個（上限，實算 ${r2(bases)}）`:`${r2(bases)} 個`}</b></div>
+    <div class="kv"><span>舊制退休金${oldElig?'':'（預估）'}</span><b>${fmt(oldAmt)}</b></div>
+    <span class="hint">${oldNote}</span>`;
+
+  // ===== 新制（依勞動部新制試算表的算法）=====
+  const newAge=Math.max(age,60);
+  const lifeAge=Math.min(85,Math.max(60,Math.floor(newAge+1e-9)));
+  if(!lifeEdited)$('nsLife').value=LIFE[lifeAge];
+  const lr=$('lifeReset'); lr.hidden=!lifeEdited||+$('nsLife').value===LIFE[lifeAge]; lr.textContent=`改回官方值（${lifeAge} 歲請領：${LIFE[lifeAge]} 年）`;
+  const r=num('nsRate')/100, i=r/12, nLife=Math.round(num('nsLife')*12);
+  const ageNow=seniority(birth,today).y, ageRet=Math.max(ageNow,seniority(birth,plusDay(retire,1)).y);
+  const ret=num('nsRet')/100;
+  const res=annuityMOL({salary:num('nsWage'),withdraw:num('nsPct')/100,grow:num('nsGrow')/100,ret,startAge:ageNow,retireAge:ageRet,oldAmt:num('nsBal')});
+  let bal=res.annuity;
+  const wait=Math.max(0,newAge-age); if(wait>0)bal=Math.round(bal*Math.pow(1+ret,wait));
+  const nsYrsAt=num('nsYrs')+toRet, newMonOK=nsYrsAt>=15;
+  if(res.year>0)N.push(['ok',`新制專戶推估（同勞動部試算表）：${ageNow} 歲到 ${ageRet} 歲共 ${res.year} 年，現有 ${fmt(num('nsBal'))}，加上提繳 ${fmt(res.withdrawTotal-num('nsBal'))}，以年報酬率 ${num('nsRet')}% 計算收益 ${fmt(res.revenue)}，約 ${fmt(res.annuity)}。`]);
+  const newMon=newMonOK&&nLife>0?(i>0?bal*i/(1-Math.pow(1+i,-nLife)):bal/nLife):null;
+  $('newOut').innerHTML=`<div class="kv"><span>請領時專戶約</span><b>${fmt(bal)}</b></div>
+    <div class="kv"><span>一次領${at(newAge)}</span><b>${fmt(bal)}</b></div>
+    <div class="kv"><span>月領（每季發）${at(newAge)}</span><b>${newMon!=null?fmt(newMon)+' / 月':'不能選'}</b></div>
+    <span class="hint">${newAge>age?'退休時還沒滿 60 歲，新制要等 60 歲才能領，這段期間專戶仍依報酬率滾存。':''}${newMon!=null?`月領約領 ${num('nsLife')} 年，到 ${Math.floor(newAge+num('nsLife'))} 歲左右為止。`:'提繳年資未滿 15 年，只能一次領。'}</span>`;
+
+  // ===== 方案比較 =====
+  const mFrom=a0=>Math.max(0,Math.round((life-a0)*12));
+  const n0=v=>Math.round(v).toLocaleString('zh-TW');
+  const D=c=>`<span class="dot d-${c}"></span>`;
+  const plans=[
+    {name:'全部一次領',how:'勞保一次請領＋舊制＋新制一次領',li:'L',nw:'L'},
+    {name:'勞保月領，勞退一次領',how:'勞保年金＋舊制＋新制一次領',li:'M',nw:'L'},
+    {name:'全部能月領的都月領',how:'勞保年金＋舊制（只能一次）＋新制月領',li:'M',nw:'M'},
+    {name:'勞保一次領，新制月領',how:'勞保一次請領＋舊制＋新制月領',li:'L',nw:'M'},
+  ];
+  const liLumpWhy=$('pre98').checked?'':(liYrs<15?'':'98 年後才加保且年資滿 15 年，勞保不能一次請領');
+  let best=-1,bestI=-1;
+  const rows=plans.map((p,k)=>{
+    const why=[];
+    if(p.li==='L'&&liLump==null)why.push(liLumpWhy||'勞保不能一次請領');
+    if(p.li==='M'&&liMon==null)why.push('勞保年資未滿 15 年，不能月領年金');
+    if(p.nw==='M'&&newMon==null)why.push('新制提繳年資未滿 15 年，不能月領');
+    if(why.length)return {p,ok:false,why};
+    const lumpL=[]; let lump=0;
+    if(!noOld){ if(oldPay>0){lumpL.push(`${D('old')}舊制 ${n0(oldPay)}`);lump+=oldPay;} else if(oldAmt>0)lumpL.push(`${D('old')}舊制 不計入（未符合條件）`); }
+    if(p.li==='L'){lump+=liLump;lumpL.push(`${D('li')}勞保 ${n0(liLump)}${liLumpAge>age+1e-6?`（${A1(liLumpAge)} 歲起）`:''}`);}
+    if(p.nw==='L'){lump+=bal;lumpL.push(`${D('new')}新制 ${n0(bal)}${newAge>age+1e-6?`（${A1(newAge)} 歲起）`:''}`);}
+    const monL=[]; let mon=0;
+    if(p.li==='M'){mon+=liMon;monL.push(`${D('li')}勞保 ${n0(liMon)}${liMonAge>age+1e-6?`（${A1(liMonAge)} 歲起）`:''}`);}
+    if(p.nw==='M'){mon+=newMon;monL.push(`${D('new')}新制 ${n0(newMon)}${newAge>age+1e-6?`（${A1(newAge)} 歲起）`:''}`);}
+    if(p.li==='M'&&p.nw==='M')monL.push(`新制領到約 ${Math.floor(newAge+num('nsLife'))} 歲，之後剩 ${n0(liMon)}`);
+    const mLi=mFrom(liMonAge??age), mNw=Math.min(mFrom(newAge),nLife);
+    const cLi=p.li==='L'?(liLumpAge<=life?liLump:0):liMon*mLi;
+    const cNw=p.nw==='L'?(newAge<=life?bal:0):newMon*mNw;
+    const cumL=[];
+    cumL.push(p.li==='L'?`${D('li')}勞保 ${n0(cLi)}`:`${D('li')}勞保 ${n0(liMon)} × ${mLi} 個月 ＝ ${n0(cLi)}`);
+    if(oldPay>0)cumL.push(`${D('old')}舊制 ${n0(oldPay)}`);
+    cumL.push(p.nw==='L'?`${D('new')}新制 ${n0(cNw)}`:`${D('new')}新制 ${n0(newMon)} × ${mNw} 個月 ＝ ${n0(cNw)}`);
+    const cum=oldPay+cLi+cNw;
+    if(cum>best){best=cum;bestI=k;}
+    return {p,ok:true,lump,lumpL,mon,monL,cum,cumL,cLi,cNw};
+  });
+  const be=(liMon&&liLump)?Math.max(liMonAge,liLumpAge)+liLump/liMon/12:null;
+  const brk=a=>a.length?`<div class="brk">${a.map(x=>`<div>${x}</div>`).join('')}</div>`:'';
+  $('cmp').innerHTML=rows.map((x,k)=>{
+    if(!x.ok)return `<tr class="na"><td><div class="plan">${x.p.name}</div><div class="how">${x.p.how}</div></td><td class="n" colspan="4">條件不符，不能選<div class="how">${x.why.join('；')}</div></td></tr>`;
+    const bt=[];
+    if(x.p.li==='M'){ if(be)bt.push(`勞保約 ${be.toFixed(1)} 歲`); else bt.push('勞保只能月領，沒有一次領可比較'); }
+    if(x.p.nw==='M'&&newMon)bt.push(`新制約 ${(newAge+bal/newMon/12).toFixed(1)} 歲`);
+    const beTxt=bt.length?bt.join('<br>'):'全部一次領，沒有月領';
+    const w=v=>best>0?v/best*100:0;
+    return `<tr class="${k===bestI?'best':''}"><td><div class="plan">${x.p.name}${k===bestI?'<span class="tag">★ 累計最多</span>':''}</div><div class="how">${x.p.how}</div><div class="bar" role="img" aria-label="組成：勞保 ${fmt(x.cLi)}、舊制 ${fmt(oldPay)}、新制 ${fmt(x.cNw)}"><span class="s-li" style="width:${w(x.cLi)}%"></span><span class="s-old" style="width:${w(oldPay)}%"></span><span class="s-new" style="width:${w(x.cNw)}%"></span></div></td>
+      <td class="n">${fmt(x.lump)}${brk(x.lumpL)}</td><td class="n">${x.mon?fmt(x.mon):'—'}${x.mon?brk(x.monL):''}</td><td class="n">${beTxt}</td><td class="n">${fmt(x.cum)}${brk(x.cumL)}</td></tr>`;
+  }).join('');
+
+  // 舊制提示
+  if(oldPay>0)N.unshift(['warn',`<b>如果舊制年資不算（例如還沒符合條件就離職，或放棄不領）</b>：上面每一種領法的「一次拿到」都會少 ${fmt(oldPay)}。舊制退休金是公司依法要付的錢，符合條件就應該領；改選新制的期限 99年6月30日已過，現在也不能再改制度。`]);
+  else if(!noOld&&!oldElig&&oldAmt>0)N.unshift(['warn',`舊制尚未符合退休條件，比較表沒有計入。如果在同一家公司做到符合條件（例如年資滿 25 年，或滿 15 年且 55 歲），這段舊制年資約可領 ${fmt(oldAmt)}。被資遣時另有規定，請問人事。`]);
+  if(age<60)N.push(['warn',`退休時 ${Math.floor(age)} 歲，還沒滿 60 歲：勞退新制要等到 60 歲才能領，勞保也有最早請領年齡，表內已標出各筆錢幾歲起可以領。`]);
+  N.push(['ok','「追上一次領」：月領年金領超過這個年齡，總額才會比一次請領多。累計金額沒有計入利息、通膨與勞保年金的物價調整。']);
+  if(be)N.push(['ok',`勞保一次請領 ${fmt(liLump)} ÷ 月領 ${fmt(liMon)}，約 ${(liLump/liMon/12).toFixed(1)} 年回本，也就是約 ${be.toFixed(1)} 歲。`]);
+  if(ageWarn&&!noOld)N.unshift(ageWarn);
+  $('notes').innerHTML=N.map(([k,t])=>`<div class="note ${k}">${t}</div>`).join('');
+}
+calc();
+})();
+</script>
+
+</body>
+</html>
